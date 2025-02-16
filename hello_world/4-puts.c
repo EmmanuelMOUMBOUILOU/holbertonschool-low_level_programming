@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-/*
+/**
  * main - Prints
  * Return: Always 0.
  */
