@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- *Affiche le contenu
+ * main - Prints
+ * Return: Always 0.
  */
 int main(void)
 {
