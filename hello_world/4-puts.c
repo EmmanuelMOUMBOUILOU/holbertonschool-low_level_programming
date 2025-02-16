@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
-* main - Prints 
+ * main - Prints 
  * Return: Always 0.
- */
+*/
 int main(void)
 
 {
