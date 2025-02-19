@@ -10,11 +10,7 @@ int main(void)
 	char c;
 
 	for (c = 'a'; c <= 'z'; c++)
-		if (c < 'e')
-			putchar(c);
-		else if (c < 'q')
-			putchar(c);
-		else
+		if (c != 'e' && c != 'q')
 			putchar(c);
 	putchar('\n');
 	return (0);
