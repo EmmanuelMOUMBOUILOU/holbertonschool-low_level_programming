@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_square -  prints a square, followed by a new line.
+ * print_triangle - prints a triangle, followed by a new line.
  * @size: the integer to be c
  *
  * Return: Nothing
