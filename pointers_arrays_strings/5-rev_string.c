@@ -7,11 +7,15 @@
  */
 void rev_string(char *s)
 {
-	int deb;
-	int fin = _strlen(s) - 1;
+	int deb = 0;
+	int fin = 0;
 	int res;
 
-	deb = 0;
+	while (s[fin] != '\0')
+	{
+		fin++;
+	}
+	fin--;
 
 	while (deb < fin)
 	{
