@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 #include <string.h>
 
 /**
@@ -7,14 +7,22 @@
  */
 void puts_half(char *str)
 {
-	int len = strlen(str);
-	int start = (len + 1) / 2;
-	int i;
+	int i = 0;
+	int len = 0;
+	int h;
+	int start;
 
-	for (i = start; str[i] != '\0'; i++)
+	while (str[len] != '\0')
 	{
-		putchar(str[i]);
+		len++;
+	}
+	h = len/2;
+	start = len - h;
+
+	for (i = start; i < len; i++)
+	{
+		_putchar(str[i]);
 	}
 
-	putchar('\n');
+	_putchar('\n');
 }
