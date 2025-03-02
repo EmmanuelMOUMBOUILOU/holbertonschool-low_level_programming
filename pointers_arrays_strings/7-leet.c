@@ -6,35 +6,22 @@
  *
  * Return: A pointer to the modified string.
  */
-char *leet(char *str) {
-	int i = 0;
+char *leet(char *str)
+{
+	int i;
+	int j;
+	char letters[] = "aAeEoOtTlL";
+	char leet[] = "4433007711";
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		switch (str[i])
+		for (j = 0; letters[j] != '\0'; j++)
 		{
-			case 'a':
-			case 'A':
-				str[i] = '4';
-				break;
-			case 'e':
-			case 'E':
-				str[i] = '3';
-				break;
-			case 'o':
-			case 'O':
-				str[i] = '0';
-				break;
-			case 't':
-			case 'T':
-				str[i] = '7';
-				break;
-			case 'l':
-			case 'L':
-				str[i] = '1';
-				break;
+			if (str[i] == letters[j])
+			{
+				str[i] = leet[j];
+			}
 		}
-		i++;
 	}
-	return str;
+	return (str);
 }
