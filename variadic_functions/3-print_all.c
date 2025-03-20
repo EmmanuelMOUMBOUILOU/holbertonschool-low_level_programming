@@ -11,9 +11,6 @@
 
 void print_all(const char * const format, ...)
 {
-	char c;
-	int i;
-	float f;
 	char *s;
 	int len;
 
@@ -21,30 +18,28 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format[len])
+	while (format && format[len])
 	{
-		if (format[len] == 'c')
+		switch (format[len])
 		{
-			c = va_arg(args, int);
-			printf("%c, ", c);
-		}
-		else if (format[len] == 'i')
-		{
-			i = va_arg(args, int);
-			printf("%d, ", i);
-		}
-		else if (format[len] == 'f')
-		{
-			f = va_arg(args, double);
-			printf("%f, ", f);
-		}
-		else if (format[len] == 's')
-		{
-			s = va_arg(args, char *);
-
-			if (s == NULL)
-				printf("(nil)");
-			printf("%s", s);
+			case 'c':
+				printf("%c, ", va_arg(args, int));
+				break;
+			case 'i':
+				printf("%d, ", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f, ", va_arg(args, double));
+				break;
+			case 's':
+				s = va_arg(args, char *);
+				if (!s)
+					s = "(nil)";
+				printf("%s", s);
+				break;
+			default:
+				len++;
+				continue;
 		}
 		len++;
 	}
